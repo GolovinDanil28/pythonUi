@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from base.base_class import Base
+from tests.logger import Logger
 
 
 class PaymentPage(Base):
@@ -26,6 +27,8 @@ class PaymentPage(Base):
 
     #Method
     def payment(self):
+        Logger.add_start_step(method="payment")
         self.get_current_url()
         self.click_btn_finish()
         self.get_current_url()
+        Logger.add_end_step(url=self.driver.current_url, method="payment")

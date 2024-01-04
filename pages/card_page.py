@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from base.base_class import Base
+from tests.logger import Logger
 
 
 class CardPage(Base):
@@ -25,6 +26,8 @@ class CardPage(Base):
     # Method
 
     def product_confirm(self):
+        Logger.add_start_step(method="product_confirm")
         print("checkaut page")
         self.checkout_button_click()
         self.get_current_url()
+        Logger.add_end_step(url=self.driver.current_url, method="product_confirm")

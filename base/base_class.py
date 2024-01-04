@@ -22,7 +22,7 @@ class Base():
     def screenshot(self):
         now_date = datetime.datetime.utcnow().strftime("%Y.%m.%d.%H.%M.%S")
         name_screenshot = 'screenshot' + now_date + '.png'
-        self.driver.save_screenshot('.\\screenshot' + name_screenshot)
+        self.driver.save_screenshot('../screens/screenshot' + name_screenshot)
 
     """Method asserd url"""
     def asser_url(self,result):
