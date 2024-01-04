@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import allure
 from base.base_class import Base
 from tests.logger import Logger
 
@@ -65,35 +66,39 @@ class MainPage(Base):
     # Method
 
     def select_product_one(self):
-        Logger.add_start_step(method="select_product_one")
-        self.click_link_product_one()
-        self.get_current_url()
-        self.click_btn_add_card()
-        self.click_card_product()
-        self.get_current_url()
-        Logger.add_end_step(url=self.driver.current_url, method="select_product_one")
+        with allure.step("select_product_one"):
+            Logger.add_start_step(method="select_product_one")
+            self.click_link_product_one()
+            self.get_current_url()
+            self.click_btn_add_card()
+            self.click_card_product()
+            self.get_current_url()
+            Logger.add_end_step(url=self.driver.current_url, method="select_product_one")
 
     def select_product_second(self):
         Logger.add_start_step(method="select_product_secont")
-        self.click_link_product_two()
-        self.get_current_url()
-        self.click_btn_add_card()
-        self.click_card_product()
-        self.get_current_url()
+        with allure.step("select_product_second"):
+            self.click_link_product_two()
+            self.get_current_url()
+            self.click_btn_add_card()
+            self.click_card_product()
+            self.get_current_url()
         Logger.add_end_step(url=self.driver.current_url, method="select_product_second")
     def select_product_three(self):
         Logger.add_start_step(method="select_product_three")
-        self.click_link_product_three()
-        self.get_current_url()
-        self.click_btn_add_card()
-        self.click_card_product()
-        self.get_current_url()
+        with allure.step("select_product_three"):
+            self.click_link_product_three()
+            self.get_current_url()
+            self.click_btn_add_card()
+            self.click_card_product()
+            self.get_current_url()
         Logger.add_end_step(url=self.driver.current_url, method="select_product_three")
 
     def select_item_menu(self):
         Logger.add_start_step(method="select_item_menu")
-        self.click_burger_menu()
-        self.click_about_item_menu()
-        self.get_current_url()
-        self.asser_url("https://saucelabs.com/")
+        with allure.step("select_item_menu"):
+            self.click_burger_menu()
+            self.click_about_item_menu()
+            self.get_current_url()
+            self.asser_url("https://saucelabs.com/")
         Logger.add_end_step(url=self.driver.current_url, method="select_item_menu")

@@ -1,3 +1,4 @@
+import allure
 from selenium import webdriver
 from pages.card_page import CardPage
 from pages.client_info_page import ClientInfoPage
@@ -6,6 +7,7 @@ from pages.login_page import LoginPage
 from pages.main_page import MainPage
 from pages.payment_page import PaymentPage
 
+@allure.description("test about")
 def test_link_about():
         driver = webdriver.Chrome()
         print("start tests")
